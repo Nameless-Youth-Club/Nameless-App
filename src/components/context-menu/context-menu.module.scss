@@ -1,0 +1,12 @@
+.contextMenuContainer {
+    // height: fit-content;
+    background-color: var(--theme-bg);
+    padding: 2rem;
+    border: 1px solid var(--theme-on-bg);
+    border-radius: .5rem;
+    & > a {
+        
+        // border-bottom: 1px solid var(--theme-on-bg);
+        
+    }
+}

@@ -1,0 +1,26 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    .productImage {
+       max-width: 50vw; // Adjust this value based on your design
+       max-height: 40vh;
+       cursor: pointer;
+ 
+       @media (max-width: 768px) {
+          max-width: 45vw; // Adjust for smaller screens
+          max-height: 35vh;
+       }
+    }
+ 
+    .productName {
+       margin-top: 10px;
+       font-size: 18px;
+
+       @media (max-width: 768px) {
+         font-size: 18px; // Adjust for smaller screens
+      }
+    }
+ }

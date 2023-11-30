@@ -1,0 +1,53 @@
+.emailCaptureContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    & > button {
+        width: 65%;
+        padding: 1.5rem;
+        background-color: var(--theme-bg);
+        color: var(--theme-on-bg);
+        border: 1px solid var(--theme-on-bg);
+    }
+}
+
+.inputContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row; /* Ensure horizontal layout */
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center;
+  }
+  
+  .buttonContainer button {
+    display: inline-block;
+    margin: 5px; /* Add margin for spacing between buttons */
+  }
+
+  .activeButton {
+    background-color: var(--theme-on-bg);
+    color: var(--theme-bg);
+  }
+
+@media(min-width: 1000px) {
+    .emailCaptureContainer {
+        & > button {
+            width: 30%;
+        }
+    }
+
+    .inputContainer {
+        width: 60%;
+    }
+}

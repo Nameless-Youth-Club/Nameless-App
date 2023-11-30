@@ -1,0 +1,16 @@
+.label {
+    font-family: var(--theme-display-font);
+    font-size: .6rem;
+    padding-bottom: .25rem;
+}
+
+.input {
+    border-radius: .5rem;
+    background-color: var(--theme-on-bg) !important;
+    color: var(--theme-bg) !important;
+    font-family: var(--theme-body-font) !important;
+}
+
+.inputContainer {
+    width: 80%;
+}

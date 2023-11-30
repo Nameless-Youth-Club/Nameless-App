@@ -1,0 +1,448 @@
+.container {
+  // background-color: maroon;
+  color: var(--theme-on-bg);
+  border: .5px solid var(--theme-on-bg);
+  // background-color: hsla(0, 100%, 100%, 0.05);
+	box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */
+		0px 1px 1px 0px hsla(0,0%,0%,0.14), 
+		0px 2px 1px -1px hsla(0,0%,0%,0.12), 
+		0px 1px 3px 0px hsla(0,0%,0%,0.2);
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr 0.5fr;
+  // gap: 0px 0px;
+  // grid-template-areas:
+  //   "top"
+  //   "bottom";
+  display: flex;
+  flex-direction: column;
+
+  border-radius: .5rem;
+  // height: 100%;
+  min-height: fit-content;
+  overflow: scroll;
+  // width: 100%;
+  // max-height: 40vh;
+}
+
+.buttonLoading {
+  height: inherit;
+  width: 100%;
+  &:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 2s infinite;      
+    animation: ellipsis steps(4,end) 2s infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+    color: var(--theme-on-bg);
+    // padding: .1rem;
+  }
+}
+
+.topImage {
+  min-height: 100px;
+  height: auto;
+  width: 100%;
+  border-radius: .5rem;
+  grid-area: top;
+  cursor: pointer;
+}
+
+.timeRange {
+  margin-right: 1rem;
+}
+
+// .bottomInfo {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 0px;
+//   grid-area: text;
+//   margin-left: 1rem;
+// }
+
+.eventName {
+  font-family: var(--theme-display-font);
+  margin-bottom: 0;
+  grid-area: eventName;
+}
+
+.eventLogo {
+  width: 30%;
+}
+
+.stripeLogo {
+  height: auto;
+  width: 45%;
+}
+
+.closeDetail {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  color: var(--theme-on-bg);
+  cursor: pointer;
+  font-family: var(--theme-display-font);
+  font-size: 1.5rem;
+}
+
+.popupContainer {
+  height: 100%;
+  width: fit-content;
+}
+
+.popup {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--theme-bg);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 98;
+}
+
+.checkoutContainer {
+  overflow: scroll;
+  align-items: center;
+}
+
+.qrCode {
+  margin-top: 5%;
+
+  & > canvas {
+    height: 80% !important;
+    width: 80% !important;
+  }
+}
+
+.qrCodeContainer{
+  // position: relative;
+  width: 100%;
+  height: 50%;
+  background-color: white;
+  // height: 20vh;
+  flex-grow: 1;
+}
+
+.tos{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  font-size: .7rem;
+
+}
+
+.logo {
+  display: flex;
+  height: 40%;
+  width: auto;
+  flex-direction: column;
+
+}
+
+.location{
+  display: flex;
+  flex-direction: column;
+  grid-area: location;
+  width: 100%;
+  justify-content: left;
+
+}
+
+.link {
+  text-decoration: underline; /* Underline the link text */
+  color: white; /* Set the link color to a typical URL color (e.g., blue) */
+}
+
+.dateContainer {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  grid-area: date;;
+  &>p {
+    margin-top: 0;
+    // font-size: .5rem;
+  }
+}
+
+.hostDetails{
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.instagramLogo{
+  height: 25px;
+  width: auto;
+
+}
+
+.hostInfo{
+  // margin-left: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  flex-direction: column;
+  gap: 10px;
+  grid-area: host;
+}
+
+.reserveButton {
+  justify-self: end;
+  // margin-right: 1rem;
+  align-self: center;
+  grid-area: rsvp;
+  font-family: var(--theme-display-font);
+  // z-index: 2;
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 2rem;
+
+  &>button {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-family: var(--theme-display-font);
+    background-color: var(--theme-bg);
+    width: 60vw;
+    border-color: whitesmoke;
+    color: whitesmoke;
+  }
+
+  &>p {
+    font-family: var(--theme-display-font);
+  }
+}
+
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0px 0px;
+    grid-template-areas:
+      "eventName eventName"
+      "date date"
+      "location location"
+      "host host"
+      "desc desc"
+      "rsvp rsvp";
+  grid-area: bottom;
+  min-height: fit-content;
+  padding: 1rem;
+  place-items: left;
+  
+
+  // box-shadow:
+	// 	// /* offset-x | offset-y | blur-radius | spread-radius | color */
+	// 	// 0px 16px 24px 2px hsla(0,0%,0%,0.14), 
+	// 	// 0px 6px 30px 5px hsla(0,0%,0%,0.12), 
+	// 	// 0px 8px 10px -5px hsla(0,0%,0%,0.2);
+}
+
+// .location {
+//   grid-area: location;
+//   align-self: center;
+//   margin-left: 1rem;
+//   display: flex;
+
+// }
+
+
+
+.detailContainer {
+  min-height: fit-content;
+  // height: 80vh;
+  // & > .topImage {
+  //   height: 500px;
+  //   width:auto
+  // }
+}
+
+// .detailBottom {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-template-rows: .25fr 1fr .25fr;
+//   gap: 0px 0px;
+//   grid-template-areas:
+//     "text text"
+//     "desc desc"
+//     "host host"
+//     "location rsvp";
+// }
+
+.desc {
+  grid-area: desc;
+  align-self: center;
+  margin-left: 1rem;
+  white-space: pre-line
+}
+.ticketPopup{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  /* fallback for Js load */
+  // height: var(--doc-height);
+  background-color: var(--theme-bg);
+  align-items: center;
+  justify-content: center;
+  // gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 98;
+}
+
+.ticketContainer{
+  height: 80%;
+  overflow-y: scroll;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 6%;
+  padding-bottom: 10%;
+
+}
+
+.ticket{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+@media(min-width: 1400px) {
+  // .location {
+  //   justify-self: start;
+  //   margin-left: 1rem;
+  // }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0px 0px;
+    grid-template-areas:
+      "eventName eventName"
+      "date date"
+      "location location"
+      "host host"
+      "desc desc"
+      "rsvp rsvp";
+
+    grid-area: bottom;
+    min-height: fit-content;
+    padding: 1rem;
+  }
+
+  .eventName {
+    grid-area: eventName;
+  }
+
+  .dateContainer {
+    grid-area: date;
+    width: 30%;
+    place-self: end;
+  }
+
+  .location {
+    grid-area: location;
+  }
+
+  .hostInfo {
+    grid-area: host;
+    padding-top: 3%;
+    margin: 0;
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  .hostDetails {
+    width: 60%;
+  }
+
+  .desc, .emptyDesc {
+    grid-area: desc;
+  }
+
+  .reserveButton {
+    grid-area: rsvp;
+    width: 60%;
+    place-self: end;
+  }
+
+  
+
+  // .popup {
+  //   height: 100%;
+  //   width: 40vw;
+  //   top: 10vh;
+  //   left: 35vw;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   justify-content: center;
+  //   overflow-y: scroll;
+  // }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stripeLogoContainer {
+    & > img {
+      height: 90px;
+    }
+  }
+
+  .checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .ticket {
+    min-width: fit-content;
+    min-height: fit-content;
+    padding: 3rem;
+  }
+
+  .eventLogo {
+    width: 110%;
+  }
+
+  .smallerPhoto {
+    width: 0px
+  }
+
+  // .qrCodeContainer {
+    
+  // }
+}

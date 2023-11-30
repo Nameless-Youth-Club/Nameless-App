@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Rubik+Mono+One&display=swap');
+
+
+:root {
+    /* Theme Colors */
+
+    --theme-bg: #111111;
+    --theme-on-bg: #EEEEEE;
+
+    --theme-primary: #3A606E;
+    --theme-primary-hover: hsl(0, 0%, 20%);
+    --theme-on-primary: #F3F6F6;
+
+    /* Font */
+
+    --theme-display-font: 'Rubik Mono One', sans-serif;
+    --theme-body-font: 'Karla', sans-serif;
+
+    --theme-header-size: 2em;
+    --theme-header-size2: 1.25em;
+    --theme-header-size3: .75em;
+    --theme-body-size: 1em;
+    --theme-icon-size: .75em;
+
+    --theme-body-weight: 300;
+
+}
+
+h1 {
+    font-family: var(--theme-display-font);
+    font-size: var(--theme-header-size);
+}
+
+h2 {
+    font-family: var(--theme-display-font);
+    font-size: var(--theme-header-size2);
+}
+
+h3 {
+    font-family: var(--theme-display-font);
+    font-size: var(--theme-header-size3);
+    font-weight: 100;
+}
+
+a {
+    font-family: var(--theme-display-font);
+    font-size: var(--theme-header-size3);
+    color: var(--theme-on-bg);
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+p {
+    font-family: var(--theme-body-font);
+    font-size: 1em;
+}
+
+.pageContainer {
+
+}
